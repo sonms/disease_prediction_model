@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e09c2a6c-1cf0-40d0-a90f-5aef67d7370d" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/test_disease.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/train_disease.csv" afterDir="false" />
+    <list default="true" id="e09c2a6c-1cf0-40d0-a90f-5aef67d7370d" name="변경" comment="데이터 셋 추가">
+      <change afterPath="$PROJECT_DIR$/FeaturesWithHighImportance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GetDiseaseFeatures.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiseaseImportantFeatrue.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiseaseImportantFeatrue.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,21 +26,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "sonms"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;sonms&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/sonms/disease_prediction_model.git",
-    "accountId": "c869317f-ec68-4e98-8636-89166850329f"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/sonms/disease_prediction_model.git&quot;,
+    &quot;accountId&quot;: &quot;c869317f-ec68-4e98-8636-89166850329f&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2qngX7Jy4SSjNsvYbuWffnoHf1X" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -48,7 +50,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.DiseaseImportantFeatrue.executor": "Run",
+    "Python.FeaturesWithHighImportance.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.uvicorn.executor": "Run",
+    "Python.피처 중요도.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "settings.editor.selected.configurable": "preferences.customizations"
   }
@@ -57,6 +64,31 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\engel\PycharmProjects\PythonProject" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="uvicorn" type="PythonConfigurationType" factoryName="Python">
+      <module name="PythonProject" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (PythonProject)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="uvicorn" />
+      <option name="PARAMETERS" value="main:app --reload" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="true" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -74,6 +106,15 @@
       <option name="presentableId" value="Default" />
       <updated>1735303790539</updated>
     </task>
+    <task id="LOCAL-00001" summary="데이터 셋 추가">
+      <option name="closed" value="true" />
+      <created>1735304973122</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1735304973122</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -86,5 +127,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="데이터 셋 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="데이터 셋 추가" />
   </component>
 </project>

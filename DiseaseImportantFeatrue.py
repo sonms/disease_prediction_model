@@ -36,6 +36,7 @@ for disease in y.unique():
     disease_features[disease] = top_20_features
 
 # 결과 출력
+
 for disease, features in disease_features.items():
     print(f"\n{disease}에 대한 중요 피처 (1을 많이 가지는 피처) 상위 20개:")
     print(features)
