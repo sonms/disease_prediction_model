@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e09c2a6c-1cf0-40d0-a90f-5aef67d7370d" name="변경" comment="데이터 셋 추가">
-      <change afterPath="$PROJECT_DIR$/FeaturesWithHighImportance.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GetDiseaseFeatures.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiseasePredictionWithImportantFeatures.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/disease_prediction/PredictionResultModel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/disease_prediction/PredictionTrainModel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/disease_prediction/rf_model.joblib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/UserInputFeatureData.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiseaseImportantFeatrue.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiseaseImportantFeatrue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +53,7 @@
   "keyToString": {
     "Python.DiseaseImportantFeatrue.executor": "Run",
     "Python.FeaturesWithHighImportance.executor": "Run",
+    "Python.PredictionTrainModel.executor": "Run",
     "Python.main.executor": "Run",
     "Python.uvicorn.executor": "Run",
     "Python.피처 중요도.executor": "Run",
