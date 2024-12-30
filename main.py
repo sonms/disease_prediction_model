@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 
 from GetDiseaseFeatures import get_disease_features
 from FeaturesWithHighImportance import get_features_with_high_importance
@@ -41,6 +41,14 @@ async def predict(input_data: UserInput):
 
     # 디버깅: 입력 데이터 확인
     print("Input data:", input_dict)
+
+    # 모든 입력값이 0인지 확인
+    if all(value == 0 for value in input_dict.values()):
+        # 400 Bad Request 응답 반환
+        raise HTTPException(
+            status_code=400,
+            detail="예측된 결과가 존재하지 않습니다. 다시 시도해주세요."
+        )
 
     # 중요 특성(feature) 로딩
     model, important_features = load_model()

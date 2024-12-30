@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e09c2a6c-1cf0-40d0-a90f-5aef67d7370d" name="변경" comment="데이터 셋 추가">
-      <change afterPath="$PROJECT_DIR$/DiseasePredictionWithImportantFeatures.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/disease_prediction/PredictionResultModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/disease_prediction/PredictionTrainModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/disease_prediction/rf_model.joblib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/UserInputFeatureData.py" afterDir="false" />
+    <list default="true" id="e09c2a6c-1cf0-40d0-a90f-5aef67d7370d" name="변경" comment="feat/질병 예측 모델 api 설정-각 주석 참고">
+      <change afterPath="$PROJECT_DIR$/HighlyUseFeatures.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiseasePredictionWithImportantFeatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiseasePredictionWithImportantFeatures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disease_prediction/PredictionResultModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/disease_prediction/PredictionResultModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disease_prediction/PredictionTrainModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/disease_prediction/PredictionTrainModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/disease_prediction/rf_model.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/disease_prediction/rf_model.joblib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/UserInputFeatureData.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/UserInputFeatureData.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +53,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.DiseaseImportantFeatrue.executor": "Run",
+    "Python.DiseasePredictionWithImportantFeatures.executor": "Run",
     "Python.FeaturesWithHighImportance.executor": "Run",
+    "Python.HighlyUseFeatures.executor": "Run",
     "Python.PredictionTrainModel.executor": "Run",
     "Python.main.executor": "Run",
     "Python.uvicorn.executor": "Run",
@@ -117,7 +120,23 @@
       <option name="project" value="LOCAL" />
       <updated>1735304973122</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat/피처 중요도로 질병 예측을 위해 랜덤포레스트 학습">
+      <option name="closed" value="true" />
+      <created>1735465146660</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1735465146660</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat/질병 예측 모델 api 설정-각 주석 참고">
+      <option name="closed" value="true" />
+      <created>1735465277348</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1735465277348</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,6 +152,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="데이터 셋 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="데이터 셋 추가" />
+    <MESSAGE value="feat/피처 중요도로 질병 예측을 위해 랜덤포레스트 모델 사용" />
+    <MESSAGE value="feat/피처 중요도로 질병 예측을 위해 랜덤포레스트 모델 사용" />
+    <MESSAGE value="feat/질병 예측 모델 api 설정-각 주석 참고" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat/질병 예측 모델 api 설정-각 주석 참고" />
   </component>
 </project>
