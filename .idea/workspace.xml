@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e09c2a6c-1cf0-40d0-a90f-5aef67d7370d" name="변경" comment="feat/질병 예측 모델 api 설정-각 주석 참고">
-      <change afterPath="$PROJECT_DIR$/HighlyUseFeatures.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/DiseaseRequest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiseasePredictionWithImportantFeatures.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiseasePredictionWithImportantFeatures.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disease_prediction/PredictionResultModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/disease_prediction/PredictionResultModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disease_prediction/PredictionTrainModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/disease_prediction/PredictionTrainModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/disease_prediction/rf_model.joblib" beforeDir="false" afterPath="$PROJECT_DIR$/disease_prediction/rf_model.joblib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/UserInputFeatureData.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/UserInputFeatureData.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,22 +45,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.DiseaseImportantFeatrue.executor": "Run",
-    "Python.DiseasePredictionWithImportantFeatures.executor": "Run",
-    "Python.FeaturesWithHighImportance.executor": "Run",
-    "Python.HighlyUseFeatures.executor": "Run",
-    "Python.PredictionTrainModel.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.uvicorn.executor": "Run",
-    "Python.피처 중요도.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "settings.editor.selected.configurable": "preferences.customizations"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.DiseaseImportantFeatrue.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DiseasePredictionWithImportantFeatures.executor&quot;: &quot;Run&quot;,
+    &quot;Python.FeaturesWithHighImportance.executor&quot;: &quot;Run&quot;,
+    &quot;Python.HighlyUseFeatures.executor&quot;: &quot;Run&quot;,
+    &quot;Python.PredictionTrainModel.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.uvicorn.executor&quot;: &quot;Run&quot;,
+    &quot;Python.피처 중요도.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\engel\PycharmProjects\PythonProject" />

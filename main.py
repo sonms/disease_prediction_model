@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 
 from GetDiseaseFeatures import get_disease_features
 from FeaturesWithHighImportance import get_features_with_high_importance
+from model.DiseaseRequest import DiseaseRequestData
 from model.UserInputFeatureData import UserInput
 from disease_prediction.PredictionResultModel import load_model, predict_disease
 
@@ -58,3 +59,21 @@ async def predict(input_data: UserInput):
 
     # 결과 반환
     return {"predicted_disease": predicted_disease}
+
+@app.post("/recommend-medicine", tags=["Recommend Medicine"])
+async def recommend_medicine(request : DiseaseRequestData):
+    """
+    예측된 질병을 받아 해당 질병의 중요 피처를 반환
+    """
+    # 질병 데이터 로드
+    disease_features = get_disease_features()
+
+    # 입력된 질병의 중요 피처 가져오기
+    important_features = disease_features.get(request.disease)
+
+    # 중요 피처가 없거나 데이터가 비어 있으면 에러 메시지 반환
+    if important_features is None or len(important_features) == 0:
+        return {"message": f"No important features found for disease: {request.disease}"}
+
+    # 중요 피처 반환
+    return important_features
