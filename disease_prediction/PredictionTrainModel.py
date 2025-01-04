@@ -16,6 +16,7 @@ train_csv_path = parent_dir / "train_disease.csv"
 # 데이터 로드
 train_data = pd.read_csv(train_csv_path)
 
+# 사용된 중요 피처
 important_features = [
             "itching", "joint_pain", "stomach_pain", "vomiting", "fatigue",
             "high_fever", "dark_urine", "nausea", "loss_of_appetite",
