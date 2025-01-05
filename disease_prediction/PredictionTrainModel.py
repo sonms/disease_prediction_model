@@ -33,6 +33,7 @@ except UnicodeDecodeError:
 #     "근육통", "감각 이상", "몸에 붉은 반점", "가족력", "집중력 부족"
 # ]
 
+# 사용된 중요 피처
 important_features = [
             "itching", "joint_pain", "stomach_pain", "vomiting", "fatigue",
             "high_fever", "dark_urine", "nausea", "loss_of_appetite",
