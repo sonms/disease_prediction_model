@@ -1,10 +1,20 @@
 import pandas as pd
 
 # CSV 파일 경로 설정
-csv_file_path = "train_disease.csv"
+csv_file_path = "train_disease_ko.csv"
 
 # 1. 데이터 로드
-df = pd.read_csv(csv_file_path)
+# df = pd.read_csv(csv_file_path, encoding='utf-8-sig')
+
+try:
+    df = pd.read_csv(csv_file_path, encoding='utf-8')
+except UnicodeDecodeError:
+    try:
+        df = pd.read_csv(csv_file_path, encoding='utf-8-sig')
+
+    except UnicodeDecodeError:
+        df = pd.read_csv(csv_file_path, encoding='euc-kr')
+
 
 # 2. 'prognosis' 열 제외하고 피처 사용 빈도 계산
 feature_usage = df.drop(columns=["prognosis"]).sum()

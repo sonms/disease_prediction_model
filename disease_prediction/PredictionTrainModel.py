@@ -11,10 +11,27 @@ current_file = Path(__file__)
 parent_dir = current_file.parent.parent
 
 # train.csv 파일의 경로
-train_csv_path = parent_dir / "train_disease.csv"
+train_csv_path = parent_dir / "train_disease_ko.csv"
+
+
 
 # 데이터 로드
-train_data = pd.read_csv(train_csv_path)
+# train_data = pd.read_csv(train_csv_path, encoding='utf-8-sig')
+# CSV 파일을 읽을 때 발생할 수 있는 인코딩 오류를 처리하기 위해 다양한 인코딩 시도
+try:
+    train_data = pd.read_csv(train_csv_path, encoding='utf-8')
+except UnicodeDecodeError:
+    try:
+        train_data = pd.read_csv(train_csv_path, encoding='utf-8-sig')
+    except UnicodeDecodeError:
+        train_data = pd.read_csv(train_csv_path, encoding='euc-kr')
+
+# important_features = [
+#     "가려움", "관절 통증", "구토", "피로", "고열",
+#     "발한", "짙은 소변", "메스꺼움", "식욕 부진", "복부 통증",
+#     "설사", "미열", "눈의 황변", "가슴 통증", "비틀거림",
+#     "근육통", "감각 이상", "몸에 붉은 반점", "가족력", "집중력 부족"
+# ]
 
 important_features = [
             "itching", "joint_pain", "stomach_pain", "vomiting", "fatigue",

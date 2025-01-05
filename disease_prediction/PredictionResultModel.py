@@ -8,6 +8,12 @@ def load_model():
     """
     학습된 모델과 중요 피처 리스트를 로드하는 함수
     """
+    # important_features = [
+    #     "가려움", "관절 통증", "구토", "피로", "고열",
+    #     "발한", "짙은 소변", "메스꺼움", "식욕 부진", "복부 통증",
+    #     "설사", "미열", "눈의 황변", "가슴 통증", "비틀거림",
+    #     "근육통", "감각 이상", "몸에 붉은 반점", "가족력", "집중력 부족"
+    # ]
     important_features = [
             "itching", "joint_pain", "stomach_pain", "vomiting", "fatigue",
             "high_fever", "dark_urine", "nausea", "loss_of_appetite",

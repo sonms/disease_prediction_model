@@ -1,7 +1,13 @@
 import pandas as pd
 
-# 데이터 로드
-train_data = pd.read_csv("train_disease.csv")
+# CSV 파일을 읽을 때 발생할 수 있는 인코딩 오류를 처리하기 위해 다양한 인코딩 시도
+try:
+    train_data = pd.read_csv("train_disease_ko.csv", encoding='utf-8')
+except UnicodeDecodeError:
+    try:
+        train_data = pd.read_csv("train_disease_ko.csv", encoding='utf-8-sig')
+    except UnicodeDecodeError:
+        train_data = pd.read_csv("train_disease_ko.csv", encoding='euc-kr')
 
 # 'prognosis' 컬럼을 제외한 나머지 증상 데이터 (피처들)
 X = train_data.drop(columns=['prognosis'])
@@ -36,7 +42,6 @@ for disease in y.unique():
     disease_features[disease] = top_20_features
 
 # 결과 출력
-
 for disease, features in disease_features.items():
     print(f"\n{disease}에 대한 중요 피처 (1을 많이 가지는 피처) 상위 20개:")
     print(features)

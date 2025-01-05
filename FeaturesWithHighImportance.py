@@ -3,10 +3,17 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import LabelEncoder
 
 def get_features_with_high_importance():
-    # 데이터 로드
-    train_data = pd.read_csv("train_disease.csv")
-    test_data = pd.read_csv("test_disease.csv")
-
+    # CSV 파일을 읽을 때 발생할 수 있는 인코딩 오류를 처리하기 위해 다양한 인코딩 시도
+    try:
+        train_data = pd.read_csv("train_disease_ko.csv", encoding='utf-8')
+        test_data = pd.read_csv("test_disease_ko.csv", encoding='utf-8')
+    except UnicodeDecodeError:
+        try:
+            train_data = pd.read_csv("train_disease_ko.csv", encoding='utf-8-sig')
+            test_data = pd.read_csv("test_disease_ko.csv", encoding='utf-8-sig')
+        except UnicodeDecodeError:
+            train_data = pd.read_csv("train_disease_ko.csv", encoding='euc-kr')
+            test_data = pd.read_csv("test_disease_ko.csv", encoding='euc-kr')
     # 'prognosis' 컬럼 확인
     if 'prognosis' not in train_data.columns or 'prognosis' not in test_data.columns:
         print("Error: 'prognosis' column is missing.")

@@ -5,8 +5,14 @@ def get_disease_features():
     질병과 중요 피처 데이터를 반환하는 함수
     """
     # 데이터 로드
-    train_data = pd.read_csv("train_disease.csv")
-
+    # train_data = pd.read_csv("train_disease_ko.csv", encoding='utf-8-sig')
+    try:
+        train_data = pd.read_csv("train_disease_ko2.csv", encoding='utf-8')
+    except UnicodeDecodeError:
+        try:
+            train_data = pd.read_csv("train_disease_ko2.csv", encoding='utf-8-sig')
+        except UnicodeDecodeError:
+            train_data = pd.read_csv("train_disease_ko2.csv", encoding='euc-kr')
     # 'prognosis' 컬럼을 제외한 나머지 증상 데이터 (피처들)
     X = train_data.drop(columns=['prognosis'])
 
@@ -38,5 +44,8 @@ def get_disease_features():
 
         # 각 질병의 중요 피처를 딕셔너리에 저장
         disease_features[disease] = top_20_features
+
+    # 딕셔너리의 값들 (numpy 타입)을 일반 Python 타입으로 변환
+    disease_features = {disease: top_20_features.to_dict() for disease, top_20_features in disease_features.items()}
 
     return disease_features

@@ -2,7 +2,18 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 
 # 학습 데이터 로드 및 모델 학습 (초기화)
-train_data = pd.read_csv("train_disease.csv")
+# train_data = pd.read_csv("train_disease_ko.csv", encoding='utf-8-sig')
+
+# CSV 파일을 읽을 때 발생할 수 있는 인코딩 오류를 처리하기 위해 다양한 인코딩 시도
+try:
+    train_data = pd.read_csv("train_disease_ko.csv", encoding='utf-8')
+except UnicodeDecodeError:
+    try:
+        train_data = pd.read_csv("train_disease_ko.csv", encoding='utf-8-sig')
+    except UnicodeDecodeError:
+        train_data = pd.read_csv("train_disease_ko.csv", encoding='euc-kr')
+
+
 important_features = [
     "itching", "joint_pain", "stomach_pain", "vomiting", "fatigue",
     "high_fever", "dark_urine", "nausea", "loss_of_appetite",
