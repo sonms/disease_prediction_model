@@ -37,15 +37,13 @@ async def get_highest_feature_among_features():
 
 @app.post("/predict-disease", tags=["Disease Predict"])
 async def predict(input_data: UserInput):
-    # 입력 데이터를 딕셔너리로 변환
-    input_dict = input_data.model_dump()
+    # 입력 데이터 디버깅
+    print("Received POST request with data:", input_data)
 
-    # 디버깅: 입력 데이터 확인
-    print("Input data:", input_dict)
+    input_dict = input_data.model_dump()
 
     # 모든 입력값이 0인지 확인
     if all(value == 0 for value in input_dict.values()):
-        # 400 Bad Request 응답 반환
         raise HTTPException(
             status_code=400,
             detail="예측된 결과가 존재하지 않습니다. 다시 시도해주세요."
@@ -60,8 +58,15 @@ async def predict(input_data: UserInput):
     # 결과 반환
     return {"predicted_disease": predicted_disease}
 
-@app.post("/recommend-medicine", tags=["Recommend Medicine"])
-async def recommend_medicine(request : DiseaseRequestData):
+
+# 브라우저에서 접근 시 안내 메시지를 반환
+@app.get("/predict-disease", tags=["Disease Predict"])
+async def handle_get():
+    return {"detail": "This endpoint only supports POST requests. Please use POST method with appropriate data."}
+
+
+@app.post("/disease-important-features", tags=["Recommend Medicine"])
+async def disease_important_features(request : DiseaseRequestData):
     """
     예측된 질병을 받아 해당 질병의 중요 피처를 반환
     """
