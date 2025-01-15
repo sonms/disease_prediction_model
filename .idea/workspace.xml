@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e09c2a6c-1cf0-40d0-a90f-5aef67d7370d" name="변경" comment="chore/중요 피처 변경 후 모델 재학습">
+    <list default="true" id="e09c2a6c-1cf0-40d0-a90f-5aef67d7370d" name="변경" comment="feat/접근안내 및 이름변경">
+      <change afterPath="$PROJECT_DIR$/pill_prediction/PillDataClassifier.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pill_prediction/PillDataCollection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pill_prediction/PillDataPreProcessing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pill_prediction/PillDataTrain.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/some_of_drug1.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -44,26 +49,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.DiseaseImportantFeatrue.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DiseasePredictionWithImportantFeatures.executor&quot;: &quot;Run&quot;,
-    &quot;Python.FeaturesWithHighImportance.executor&quot;: &quot;Run&quot;,
-    &quot;Python.GetDiseaseFeatures.executor&quot;: &quot;Run&quot;,
-    &quot;Python.HighlyUseFeatures.executor&quot;: &quot;Run&quot;,
-    &quot;Python.PredictionTrainModel.executor&quot;: &quot;Run&quot;,
-    &quot;Python.TranslationDataSet.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.uvicorn.executor&quot;: &quot;Run&quot;,
-    &quot;Python.피처 중요도.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/engel/PycharmProjects/PythonProject&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.DiseaseImportantFeatrue.executor": "Run",
+    "Python.DiseasePredictionWithImportantFeatures.executor": "Run",
+    "Python.FeaturesWithHighImportance.executor": "Run",
+    "Python.GetDiseaseFeatures.executor": "Run",
+    "Python.HighlyUseFeatures.executor": "Run",
+    "Python.PillDataCollection.executor": "Run",
+    "Python.PillDataPreProcessing.executor": "Run",
+    "Python.PillDataTrain.executor": "Run",
+    "Python.PredictionTrainModel.executor": "Run",
+    "Python.TranslationDataSet.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.uvicorn.executor": "Run",
+    "Python.피처 중요도.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/engel/PycharmProjects/PythonProject",
+    "settings.editor.selected.configurable": "preferences.fileTypes"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\engel\PycharmProjects\PythonProject" />
@@ -154,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735822926190</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat/접근안내 및 이름변경">
+      <option name="closed" value="true" />
+      <created>1736175128101</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1736175128101</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,6 +191,7 @@
     <MESSAGE value="feat/질병 예측 모델 api 설정-각 주석 참고" />
     <MESSAGE value="feat/예측된 질병에 대한 중요 피처 출력 api 추가" />
     <MESSAGE value="chore/중요 피처 변경 후 모델 재학습" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore/중요 피처 변경 후 모델 재학습" />
+    <MESSAGE value="feat/접근안내 및 이름변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat/접근안내 및 이름변경" />
   </component>
 </project>

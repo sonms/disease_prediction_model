@@ -1,16 +1,28 @@
-from fastapi import FastAPI, HTTPException
+import io
+
+import pandas as pd
+from torchvision.transforms import transforms
 
 from GetDiseaseFeatures import get_disease_features
 from FeaturesWithHighImportance import get_features_with_high_importance
 from model.DiseaseRequest import DiseaseRequestData
 from model.UserInputFeatureData import UserInput
 from disease_prediction.PredictionResultModel import load_model, predict_disease
+from fastapi import FastAPI, HTTPException, File, UploadFile, Path
+from torchvision import models
+import torch
+from PIL import Image
+from io import BytesIO
+
+from pill_prediction.PillDataPreProcessing import image_transform
+from pill_prediction.PillDataTrain import num_classes
 
 app = FastAPI(
     title="Disease Prediction API",
     description="질병 예측을 위해 사용하는 API",
     version="1.0.0"
 )
+
 
 @app.get("/", tags=["Features List"])
 async def root():
@@ -82,3 +94,54 @@ async def disease_important_features(request : DiseaseRequestData):
 
     # 중요 피처 반환
     return important_features
+
+
+
+
+
+
+
+
+
+
+
+
+# 모델 로드
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model = models.resnet50()
+num_classes = len(pd.read_csv("some_of_drug1.csv")['품목명'].unique())
+model.fc = torch.nn.Linear(model.fc.in_features, num_classes)
+model_path = Path("pill_prediction/pill_classifier.pth")
+model.load_state_dict(torch.load(model_path, map_location=device))
+model.to(device)
+model.eval()
+
+# 클래스 이름 로드
+data = pd.read_csv("some_of_drug1.csv")
+class_to_pill_name = {idx: name for idx, name in enumerate(data['품목명'].unique())}
+
+# 이미지 전처리
+preprocess = transforms.Compose([
+    transforms.Resize((224, 224)),
+    transforms.ToTensor(),
+    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+])
+
+@app.post("/predict")
+async def predict(file: UploadFile = File(...)):
+    # 이미지 읽기
+    contents = await file.read()
+    image = Image.open(io.BytesIO(contents)).convert('RGB')
+
+    # 이미지 전처리
+    image = preprocess(image).unsqueeze(0).to(device)
+
+    # 예측
+    with torch.no_grad():
+        outputs = model(image)
+        _, predicted = torch.max(outputs, 1)
+
+    # 예측 결과 (알약 이름)
+    predicted_pill_name = class_to_pill_name[predicted.item()]
+
+    return {"predicted_pill_name": predicted_pill_name}
