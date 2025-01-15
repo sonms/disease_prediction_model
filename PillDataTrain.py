@@ -3,19 +3,12 @@ import pandas as pd
 from pathlib import Path
 import torch.nn as nn
 import torch
-from torch.utils.data import Dataset, DataLoader
-from pill_prediction.PillDataClassifier import PillClassifier
-from pill_prediction.PillDataPreProcessing import PillDataset, image_folder, image_transform
-
-
-# 현재 파일의 경로 (prediction.py의 위치)
-current_file = Path(__file__)
-
-# 최상위 디렉토리로 이동
-parent_dir = current_file.parent.parent
+from torch.utils.data import DataLoader
+from PillDataClassifier import PillClassifier
+from PillDataPreProcessing import PillDataset, image_folder, image_transform
 
 # train.csv 파일의 경로
-train_csv_path = parent_dir / "some_of_drug1.csv"
+train_csv_path = "some_of_drug1.csv"
 
 # CSV 데이터 로드
 try:

@@ -3,15 +3,8 @@ import requests
 from pathlib import Path
 
 # CSV 파일 로드
-
-# 현재 파일의 경로 (prediction.py의 위치)
-current_file = Path(__file__)
-
-# 최상위 디렉토리로 이동
-parent_dir = current_file.parent.parent
-
 # train.csv 파일의 경로
-train_csv_path = parent_dir / "some_of_drug1.csv"
+train_csv_path = "some_of_drug1.csv"
 
 try:
     data = pd.read_csv(train_csv_path, encoding='utf-8')
