@@ -1,5 +1,6 @@
 import torch.nn as nn
 
+# 알약 분류 뉴럴 넷
 class PillClassifier(nn.Module):
     def __init__(self, num_classes):
         super(PillClassifier, self).__init__()

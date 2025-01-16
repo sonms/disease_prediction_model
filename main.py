@@ -112,7 +112,7 @@ async def disease_important_features(request : DiseaseRequestData):
 #     return JSONResponse(content={"prediction": prediction_label})
 
 # POST 요청 처리
-@app.post("/pill-predict", tags=["Disease Predict"])
+@app.post("/pill-predict", tags=["Pill Predict"])
 async def predict(file: UploadFile = File(...)):
     # train.csv 파일의 경로
     train_csv_path = "some_of_drug1.csv"
@@ -133,9 +133,9 @@ async def predict(file: UploadFile = File(...)):
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Invalid image file: {e}")
 
-    # 모델 로드 (num_classes를 모델에 맞게 설정해야 합니다)
+    # 모델 로드
     model_path = "pill_classifier.pth"
-    num_classes = len(data['품목명'].unique())  # 실제 클래스 수에 맞게 설정해야 합니다
+    num_classes = len(data['품목명'].unique())  # 실제 클래스 수
     classifier = PillClassifierPrediction(model_path, num_classes)
 
     # 이미지 예측

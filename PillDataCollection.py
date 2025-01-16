@@ -18,7 +18,7 @@ except UnicodeDecodeError:
 image_folder = Path("pill_images")
 image_folder.mkdir(parents=True, exist_ok=True)
 
-# 이미지 다운로드
+# 이미지 다운로드 후 저장
 for index, row in data.iterrows():
     image_url = row['큰제품이미지']
     pill_name = row['품목명']
