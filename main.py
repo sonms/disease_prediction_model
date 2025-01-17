@@ -113,7 +113,7 @@ async def disease_important_features(request : DiseaseRequestData):
 
 # POST 요청 처리
 @app.post("/pill-predict", tags=["Pill Predict"])
-async def predict(file: UploadFile = File(...)):
+async def pill_predict(file: UploadFile = File(...)):
     # train.csv 파일의 경로
     train_csv_path = "some_of_drug1.csv"
 
@@ -144,4 +144,4 @@ async def predict(file: UploadFile = File(...)):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Prediction error: {e}")
 
-    return {"prediction": prediction}
+    return {"prediction_pill_name": prediction}
