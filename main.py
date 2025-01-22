@@ -1,10 +1,13 @@
 import io
+from tokenize import String
 
 from starlette.responses import JSONResponse
 
+import PillNameSearch
 from GetDiseaseFeatures import get_disease_features
 from FeaturesWithHighImportance import get_features_with_high_importance
 from model.DiseaseRequest import DiseaseRequestData
+from model.PillInfoData import PillInfoDataRequest
 from model.UserInputFeatureData import UserInput
 from disease_prediction.PredictionResultModel import load_model, predict_disease
 from fastapi import FastAPI, HTTPException, File, UploadFile
@@ -145,3 +148,26 @@ async def pill_predict(file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail=f"Prediction error: {e}")
 
     return {"prediction_pill_name": prediction}
+
+
+@app.post("/pill-info", tags=["Pill Predict"])
+async def pill_info(pillName: PillInfoDataRequest):
+    train_csv_path = "some_of_drug1.csv"
+
+    try:
+        drug_data = pd.read_csv(train_csv_path, encoding='utf-8')
+    except UnicodeDecodeError:
+        try:
+            drug_data = pd.read_csv(train_csv_path, encoding='utf-8-sig')
+        except UnicodeDecodeError:
+            drug_data = pd.read_csv(train_csv_path, encoding='euc-kr')
+
+    # 품목 정보 검색
+    infoData = PillNameSearch.print_details_for_item(drug_data, pillName.pillName)
+
+    # 데이터가 없을 경우 처리
+    if infoData is None:
+        raise HTTPException(status_code=404, detail="Pill information not found")
+
+    # 데이터 반환
+    return {"Business_Name": infoData[0], "Classification_Name": infoData[1], "Open_Date": infoData[2]}
