@@ -1,8 +1,5 @@
 import io
 from tokenize import String
-
-from starlette.responses import JSONResponse
-
 import PillNameSearch
 from GetDiseaseFeatures import get_disease_features
 from FeaturesWithHighImportance import get_features_with_high_importance
