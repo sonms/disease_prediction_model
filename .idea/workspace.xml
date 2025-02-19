@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e09c2a6c-1cf0-40d0-a90f-5aef67d7370d" name="변경" comment="feat/Render 배포용 requirements.txt 생성">
-      <change beforePath="$PROJECT_DIR$/.idea/PythonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PythonProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e09c2a6c-1cf0-40d0-a90f-5aef67d7370d" name="변경" comment="chore/PYTHON_VERSION=3.10 변경">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739969328338</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="chore/PYTHON_VERSION=3.10 변경">
+      <option name="closed" value="true" />
+      <created>1739972506353</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1739972506353</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,6 +232,7 @@
     <MESSAGE value="chore/함수 이름 변경" />
     <MESSAGE value="feat/알약이름에 해당하는 row의 효능, 업소명, 출시일 return하는 api" />
     <MESSAGE value="feat/Render 배포용 requirements.txt 생성" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat/Render 배포용 requirements.txt 생성" />
+    <MESSAGE value="chore/PYTHON_VERSION=3.10 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore/PYTHON_VERSION=3.10 변경" />
   </component>
 </project>
