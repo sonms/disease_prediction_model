@@ -1,5 +1,10 @@
 import io
+import os
 from tokenize import String
+
+import uvicorn
+from starlette.middleware.cors import CORSMiddleware
+
 import PillNameSearch
 from GetDiseaseFeatures import get_disease_features
 from FeaturesWithHighImportance import get_features_with_high_importance
@@ -19,10 +24,22 @@ app = FastAPI(
     version="1.0.0"
 )
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8000))  # 환경변수 PORT 사용, 없으면 8000 사용
+    uvicorn.run(app, host="0.0.0.0", port=port)
 
 @app.get("/", tags=["Features List"])
 async def root():
     return {"message": "Hello World2"}
+
 
 
 @app.get("/important-features", tags=["Features List"])
